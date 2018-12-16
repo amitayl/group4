@@ -1,0 +1,10 @@
+var x;
+var un_defined = undefined;
+x == un_defined ? comsole.log("values are equal") : console.log("values are not equal");
+
+x === un_defined ? comsole.log("values and type are equal") : console.log("values and type are not equal");
+
+x = "some string";
+x == un_defined ? comsole.log("after some string: values are equal") : console.log("after some string: values are not equal");
+
+x === un_defined ? comsole.log("after some string: values and type are equal") : console.log("after some string: values and type are not equal");
