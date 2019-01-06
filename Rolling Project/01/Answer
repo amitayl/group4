@@ -11,7 +11,7 @@ function Users ()
     this.createUser = function (user) {
         // Authentication - dublicated usernames
         for (var index = 0, notFound = true; index < this.arrOfUsers.length && notFound ; index++) {
-            if ( this.arrOfUsers[index] === user.userName) {
+            if ( this.arrOfUsers[index].userName === user.userName) {
                 console.log ("duplicated user names. User was NOT created");
                 notFound = false;
             }
@@ -28,12 +28,16 @@ function Users ()
     };
 
     this.getUsersList = function () {
+        
         var arrUsersnames = [];
 
         for (var index = 0 ; index < this.arrOfUsers.length; index++) {
-            arrUsersnames.push(this.arrOfUsers[index]);       
+            arrUsersnames.push(this.arrOfUsers[index].userName);       
         }
-        return arrUsersnames;
+        if (arrUsersnames === null)
+            return "empty list";
+        else
+            return arrUsersnames;
     };
 
 };
@@ -41,12 +45,13 @@ function Users ()
 
 var user = new User ("Amitay","1234",45);
 var users = new Users;
-users.createUser(user);
-users.getUsersList();
+// users.createUser(user);
+// users.getUsersList();
 
-var user2 = new User ("Avi","4321",38);
-users.createUser(user2);
-users.getUsersList();
-
+// var user2 = new User ("Avi","4321",38);
+// users.createUser(user2);
+// users.getUsersList();
+// users.createUser(user);
+// users.getUsersList();
 
 
