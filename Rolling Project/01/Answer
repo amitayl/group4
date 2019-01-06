@@ -1,0 +1,33 @@
+function User (userName,password,age) {
+    this.userName = userName;
+    this.password = password;
+    this.age = age;
+};
+
+function Users ()
+{
+    this.arrOfUsers = [];
+
+    this.createUser(user) = function () {
+        // Autontication - dublicated usernames
+        for (var index = 0; index < arrOfUsers.length; index++) {
+            if (us === ) {
+                
+            }
+        }
+            
+    };
+
+    this.deleteUser = function () {
+    };
+
+    this.getName() = function () {
+        return this.userName;
+    };
+
+    
+
+
+};
+
+var p = new Person ("amitayl","1234",45);
