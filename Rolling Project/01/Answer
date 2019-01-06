@@ -9,25 +9,32 @@ function Users ()
     this.arrOfUsers = [];
 
     this.createUser(user) = function () {
-        // Autontication - dublicated usernames
-        for (var index = 0; index < arrOfUsers.length; index++) {
-            if (us === ) {
-                
+        // Authentication - dublicated usernames
+        for (var index = 0, notFound = true; index < arrOfUsers.length && notFound ; index++) {
+            if ( arrOfUsers[index] === user.userName) {
+                console.log ("duplicated user names. User was NOT created");
+                notFound = false;
             }
         }
-            
+        // check if there was an attempt to duplicate
+        if (notFound) {
+            arrOfUsers.push(user);
+        }
     };
 
-    this.deleteUser = function () {
+    this.deleteUser = function (user) {
+        arrOfUsers.splice(arrOfUsers.indexOf(user.userName), 0);
     };
 
-    this.getName() = function () {
-        return this.userName;
+    this.getUsersList() = function () {
+        var arrUsersnames = [];
+
+        for (var index = 0 ; index < arrOfUsers.length; index++) {
+            arrUsersnames.push(arrOfUsers[index]);       
+        }
+        return arrUsersnames;
     };
-
-    
-
 
 };
 
-var p = new Person ("amitayl","1234",45);
+
