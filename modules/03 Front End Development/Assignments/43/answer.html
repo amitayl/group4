@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=<1.0>">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    Select dificulty:
+    <input list="dificulty" onchange="selection()">
+
+    <datalist id="dificulty">
+        <option value="Easy">
+            <option value="Medium">
+                <option value="Hard">
+    </datalist>
+
+    <select name="" id="selectList" disabled>
+    </select>
+
+    <div id="display">
+
+    </div>
+
+
+    <!-- <select disabled>
+            <option value="volvo">Volvo</option>
+            <option value="saab">Saab</option>
+            <option value="mercedes">Mercedes</option>
+            <option value="audi">Audi</option>
+          </select> -->
+
+
+
+
+    <script>
+        
+        var div = document.getElementById("display");
+        var selectList = document.getElementById("selectList");
+
+        var orig_string = null;
+        var random_string = null;
+
+
+        function generate_random_string(string_length){
+            var random_string = '';
+            var random_ascii;
+            for(var i = 0; i < string_length; i++) {
+                random_ascii = Math.floor((Math.random() * 25) + 97);
+                random_string += String.fromCharCode(random_ascii)
+            }
+            return random_string
+        }
+
+
+
+        function selection() {
+            var sel = document.getElementsByTagName("input")[0].value;
+
+            switch (sel) {
+                case "Easy":
+                    orig_string = generate_random_string(3);
+                    random_string = orig_string.split("").reverse();
+                    console.log("orig",orig_string);
+                    console.log("reverse",random_string);
+                    break;
+
+                case "Medium":
+                    orig_string = generate_random_string(5);
+                    random_string = orig_string.split("").reverse();
+                    console.log("orig",orig_string);
+                    console.log("reverse",random_string);
+                    break;
+
+                case "Hard":
+                    orig_string = generate_random_string(7);
+                    random_string = orig_string.split("").reverse();
+                    console.log("orig",orig_string);
+                    console.log("reverse",random_string);
+                    break;
+
+                default: div.innerText = "wrong entry";
+                    break;
+            }
+
+            gameOn();
+
+        }
+
+
+        function gameOn() {
+
+            for (var index = 0; index < random_string.length; index++) {
+                selectList.innerHTML += '<option value="' + random_string[index] + '">' + random_string[index] + '</option>';
+            }
+            selectList.disabled = false;
+            selectList.onchange = selectedLetter;
+
+
+
+        }
+
+        function selectedLetter() {
+            
+        }
+
+
+    </script>
+
+</body>
+
+</html>
