@@ -97,14 +97,14 @@
                 selectList.innerHTML += '<option value="' + random_string[index] + '">' + random_string[index] + '</option>';
             }
             selectList.disabled = false;
-            selectList.onchange = selectedLetter;
+            selectList.onclick = selectedLetter;
 
 
 
         }
 
-        function selectedLetter() {
-            
+        function selectedLetter(event) {
+            console.log(event.target.value);
         }
 
 
