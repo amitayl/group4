@@ -1,0 +1,9 @@
+<div id="allDiv">
+  <div *ngFor="let pic of pictures">
+      <app-picture [pic]="pic" (click2open)="clickLarge($event)"></app-picture>
+  </div>
+</div>
+
+<div *ngIf="url">
+  <img [src]="url" (click)="closePic()">
+</div>

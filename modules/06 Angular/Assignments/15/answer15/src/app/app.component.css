@@ -1,0 +1,13 @@
+html, body {
+    width: 100%;
+    padding: 0;
+}
+*{
+    box-sizing: border-box;
+}
+
+#allDiv {
+    display: flex;
+    flex-flow: wrap;
+    flex-direction: row;
+}
