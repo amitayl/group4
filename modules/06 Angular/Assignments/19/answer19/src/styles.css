@@ -1,0 +1,42 @@
+body,html {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+
+
+#container {
+    background: lightgreen;
+    border: 2px solid green;
+    padding: 100px;
+    border-radius: 25px;
+    width: 200px;
+  }
+
+
+  input , button {
+      width: 100%;
+      padding:0;
+      border: 2px, solid black;
+      height: 20px;
+      box-sizing: border-box;
+  }
+
+  input {
+    background-color :orange;
+    text-align: center;
+}
+h1 {
+    direction: rtl;
+    text-align: center;
+}
+
+button {
+    height: 20px;
+}
+
+#res {
+    display: flex;
+    justify-content: center;
+}

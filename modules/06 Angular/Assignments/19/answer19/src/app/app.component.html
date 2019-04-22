@@ -1,0 +1,14 @@
+<h1>מחשבון BMI</h1>
+<div id="container">
+    <form (submit)="calc($event,gova.value,miskal.value)" id="">
+        <input type="number" placeholder="גובה" id="gova" #gova>
+        <input type="number" placeholder="משקל" id="miskal" #miskal>
+        <button type="submit">חשב</button>
+        <div id="res" *ngIf="result !== 0">
+            <div id="center">
+                    {{result}}
+            </div>
+            
+        </div>
+    </form>
+</div>
