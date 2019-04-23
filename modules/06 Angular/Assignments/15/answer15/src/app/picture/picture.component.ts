@@ -1,7 +1,7 @@
-import { Component, Input, Output, EventEmitter , OnInit } from '@angular/core';
+import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
 import { Picture } from '../picture.model';
 import { ActivatedRoute } from '@angular/router';
-
+ 
 @Component({
   selector: 'app-picture',
   templateUrl: './picture.component.html',
@@ -15,23 +15,18 @@ export class PictureComponent implements OnInit{
   borderColor: string = "";
   width: number = 300;
   activatedRoute: ActivatedRoute;
+  selectedAuthor = "";
 
-  // pictures : Picture[];
-  
-  constructor () {
-    //this.activatedRoute = activatedRoute;
-  //   this.pictures = [ {imgLink: "assets/images/pic1.jpg", counter: 0 , author: "david1" },
-  //                     { imgLink: "assets/images/pic2.jpg", counter: 0 , author: "david2"},
-  //                     { imgLink: "assets/images/pic3.jpg", counter: 0 , author: "david3"},
-  //                     { imgLink: "assets/images/pic4.jpg", counter: 0 , author: "david4"},
-  //                     { imgLink: "assets/images/pic5.jpg", counter: 0 , author: "david5"},
-  //                     { imgLink: "assets/images/pic6.jpg", counter: 0 , author: "david6"},
-  //                     { imgLink: "assets/images/pic7.jpg", counter: 0 , author: "david7"},
-  //                     { imgLink: "assets/images/pic8.jpg", counter: 0 , author: "david8"},
-  //                     { imgLink: "assets/images/pic9.jpg", counter: 0 , author: "david9"},
-  //                     { imgLink: "assets/images/pic10.jpg", counter: 0 , author: "david10"}];
-    
+  constructor (activatedRoute: ActivatedRoute) {
+
+      this.activatedRoute = activatedRoute;
   }
+
+
+  ngOnInit () {
+    this.selectedAuthor = this.activatedRoute.snapshot.params.author;
+  }
+
 
   like(): void {
 
@@ -42,12 +37,6 @@ export class PictureComponent implements OnInit{
     } else {
       this.width = 400;
     }
-  }
-
-  ngOnInit () {
-    // if (!this.pic) {
-    //   this.setMovie(this.activatedRoute.snapshot.params.author);
-    // }
   }
 
   setBorderAndOpenLarge(): void {

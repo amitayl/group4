@@ -1,6 +1,8 @@
-<div id="main">
-  <img (click)="setBorderAndOpenLarge()" [src]="pic.imgLink" [style.border-color]="borderColor" [style.width.px]="width" >
-  <div id="author">{{pic.author}}</div>
+<div id="main" >
+  <img (click)="setBorderAndOpenLarge()" [src]="pic.imgLink" [style.border-color]="borderColor"
+    [style.width.px]="width">
+  <div id="author"><a routerLink="authors/{{ pic.author }}">{{pic.author}}</a></div>
+  <!-- <a [routerLink]="['authors','pic.author']" >{{pic.author}}</a> אפשר גם ככה --> 
   <button class="button" (click)="like()">Like</button>
   <input type="text" [value]="pic.counter" disabled>
 </div>
