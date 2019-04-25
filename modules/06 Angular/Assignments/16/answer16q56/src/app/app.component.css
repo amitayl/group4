@@ -1,0 +1,30 @@
+#up {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    flex-direction: row;
+}
+
+#down {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    flex-direction: row;
+}
+
+#main_pic {
+    width: 300px;
+    height: 300px;
+}
+
+img {
+    width: 100px;
+    width: 100px;
+    padding: 20px;
+}
+
+#left_arrow,
+#right_arrow {
+    width: 200px;
+    height: 200px;
+}
