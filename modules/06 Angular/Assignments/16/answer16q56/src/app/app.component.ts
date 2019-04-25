@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-
+import { PictureData } from './picture.model';
+ 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -7,25 +8,24 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   
-  sources : string[]; 
+  sources : PictureData[]; 
 
-  selectedSrc : string;
+  selectedPic : PictureData;
 
   constructor () {
     this.sources = [
-      "http://www.flowershopinmakati.com/image/cache/data/flowers/12-d-roses-stargazer-flower-delivery-100x100.jpg",
-      "http://www.flowershopinmakati.com/image/cache/data/flowers/12-d-gerberas-stargazer-flower-delivery-100x100.jpg",
-      "http://www.flowershopinmakati.com/image/cache/data/flowers/12-d-mixed-pc-wh-r-roses-flower-delivery-100x100.jpg",
-      "http://www.flowershopinmakati.com/image/cache/data/flowers/12-d-mixed-roses-bouquet-flower-delivery-100x100.jpg",
-      "http://www.flowershopinmakati.com/image/cache/data/flowers/12-d-r-roses-fillers-bouquet-flower-delivery-100x100.jpg"
+      { src: "http://www.flowershopinmakati.com/image/cache/data/flowers/12-d-roses-stargazer-flower-delivery-100x100.jpg", index: 0},
+      { src: "http://www.flowershopinmakati.com/image/cache/data/flowers/12-d-gerberas-stargazer-flower-delivery-100x100.jpg", index: 1},
+      { src: "http://www.flowershopinmakati.com/image/cache/data/flowers/12-d-mixed-pc-wh-r-roses-flower-delivery-100x100.jpg", index: 2},
+      { src: "http://www.flowershopinmakati.com/image/cache/data/flowers/12-d-mixed-roses-bouquet-flower-delivery-100x100.jpg", index: 3},
+      { src: "http://www.flowershopinmakati.com/image/cache/data/flowers/12-d-r-roses-fillers-bouquet-flower-delivery-100x100.jpg", index:4}
     ];
 
-    this.selectedSrc = this.sources[0];
+    
+    this.selectedPic = this.sources[0];
   }
 
-
-
-  setMainPic (src: string) {
-    this.selectedSrc = src;
+  setMainPic (pic: PictureData) {
+    this.selectedPic = pic;
   }
 }

@@ -1,5 +1,5 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-
+import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { PictureData } from '../picture.model';
 
 
 @Component({
@@ -7,18 +7,14 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
   templateUrl: './picture.component.html',
   styleUrls: ['./picture.component.css']
 })
-export class PictureComponent implements OnInit {
+export class PictureComponent {
 
-  @Input() mySrc : string;
-  @Output() click2select = new EventEmitter<string>();
+  @Input() pic : PictureData ;
+  @Output() click2select = new EventEmitter<PictureData>();
 
   constructor() { }
 
   picClick () {
-    this.click2select.emit(this.mySrc);
+    this.click2select.emit(this.pic);
   }
-
-  ngOnInit() {
-  }
-
 }
