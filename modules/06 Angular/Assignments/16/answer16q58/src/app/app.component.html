@@ -1,0 +1,15 @@
+<div id="content" class="middle">
+  <div id="container">
+    <div id="header">ITube</div>
+    <div id="wrapper">
+      <div id="player">
+        <app-video [video]="selectedVideo"></app-video>
+      </div>
+      <div id="menu">
+        <div *ngFor="let vid of videos">
+          <app-video [video]="vid" (setMainVideo)="openMainVideo($event)"></app-video>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
