@@ -52,8 +52,8 @@ html, body {
     padding: 10px;
 }
 
-.video img {
-    float: left;
+ img {
+    margin: 5px;
     width: 75px;
     height: 75px;
 }

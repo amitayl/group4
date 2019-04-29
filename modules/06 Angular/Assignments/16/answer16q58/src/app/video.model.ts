@@ -3,5 +3,4 @@ export interface Video {
     title: string;
     artist: string;
     description: string;
-    picture : string;
 }

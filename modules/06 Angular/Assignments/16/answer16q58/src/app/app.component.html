@@ -6,8 +6,8 @@
         <app-video [video]="selectedVideo"></app-video>
       </div>
       <div id="menu">
-        <div *ngFor="let vid of videos">
-          <app-video [video]="vid" (setMainVideo)="openMainVideo($event)"></app-video>
+        <div *ngFor="let pic of pictures">
+          <app-picture [picture]="pic" (setMainVideo)="openMainVideo($event)"></app-picture>
         </div>
       </div>
     </div>
