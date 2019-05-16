@@ -9,17 +9,34 @@ export class GameService {
   availableCards: Card[];
   hasWon: boolean;
   isGameActive: boolean;
+
+  secondCounter : number;
+
   constructor() {
     this.cards = [];
     this.hasWon = false;
     this.isGameActive = true;
     this.initAvailableCards();
     this.shuffle();
+    this.secondCounter = 0;
    }
+
    get gameCards(): Card[] {
      return this.cards;
    }
+
+    startTimer () {
+      setInterval(() => {
+        this.secondCounter++;
+        }, 1000);
+    }
+
+    get getTime (){
+        return this.secondCounter;
+    }
+
    initAvailableCards() {
+    this.startTimer();
      this.availableCards = [
        {content: "cat", selected: false, correct: false},
        {content: "dog", selected: false, correct: false},
