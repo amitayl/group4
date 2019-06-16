@@ -1,0 +1,38 @@
+<app-add-message></app-add-message>
+
+
+<form #fUpdate="ngForm" (submit)="onUpdateForm(fUpdate)" *ngIf="isEditing">
+    <h4>Edit Your Message</h4>
+    <label for="username">Your Name *</label>
+    <input type="text" id="username" [ngModel]="usernameModel" #usernameRef="ngModel" name="username" [value]="currentMessage.author" required />
+  
+    <label for="message">Your Message *</label>
+    <input type="text" id="message" [ngModel]="messageModel" #messageRef="ngModel" name="message" [value]="currentMessage.message" required />
+  
+    <button [disabled]="fUpdate.invalid">Update</button>
+  </form>
+
+  <!-- ///////////////// -->
+  <!--  Search Message  -->
+  <form #fSearch="ngForm" (submit)="onSearchForm(fSearch)">
+      <h4>Search A Message</h4>
+      <label for="username">Your Name *</label>
+      <input type="text" id="username" [ngModel]="usernameModel" #usernameRef="ngModel" name="username" [value]="currentMessage.author" required />
+    
+      <label for="message">Your Message *</label>
+      <input type="text" id="message" [ngModel]="messageModel" #messageRef="ngModel" name="message" [value]="currentMessage.message" required />
+    
+      <button [disabled]="fSearch.invalid">Update</button>
+    </form>
+<!-- ///////////////////// -->
+
+<div id="messages">
+  <h3>Messages:</h3>
+  <ul *ngFor="let messageContent of messages">
+    <li>{{ messageContent.author }}: {{ messageContent.message }} <button
+        (click)="deleteMessage(messageContent.id)">Delete</button>
+
+      <button (click)="editMessage(messageContent)">Edit</button>
+    </li>
+  </ul>
+</div>

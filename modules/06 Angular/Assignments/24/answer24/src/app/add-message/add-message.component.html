@@ -1,0 +1,10 @@
+<form #fAdd="ngForm" (submit)="onSubmitForm(fAdd)" *ngIf="!isEditing">
+  <h4>Add Your Message</h4>
+  <label for="username">Your Name *</label>
+  <input type="text" id="username" [ngModel]="usernameModel" #usernameRef="ngModel" name="username" required />
+
+  <label for="message">Your Message *</label>
+  <input type="text" id="message" [ngModel]="messageModel" #messageRef="ngModel" name="message" required />
+
+    <button [disabled]="fAdd.invalid">Send</button>
+</form>
