@@ -1,0 +1,35 @@
+<form #addCar="ngForm" (submit)="addCarSubmit($event, addCar)">
+  <h3>Add Car</h3>
+
+  <label for="addCarLicenceNumber">Add Licence Number</label>
+  <input type="text" name="LicenseNumber" id="addCarLicenceNumber" ngModel placeholder="XX-XXX-XX">
+  <br>
+  <label for="addCarManufacture">Add Manufacure</label>
+  <input type="text" name="Manufacturer" id="addCarManufacture" ngModel placeholder="Toyota...">
+  <br>
+  <label for="addCarModel">Add Model</label>
+  <input type="text" name="Model" id="addCarModel" ngModel placeholder="Corola...">
+  <br>
+  <label for="addCarYear">Add Year</label>
+  <input type="text" name="Year" id="addCarYear" ngModel placeholder="1990...">
+  <br>
+  <label for="addCarKM">Add Mileage</label>
+  <input type="text" name="KM" id="addCarKM" ngModel placeholder="10000...">
+  <br>
+  <label for="addCarPrice">Add Price</label>
+  <input type="text" name="Price" id="addCarPrice" ngModel placeholder="10000...">
+  <br>
+  <button type="submit">Add Form</button>
+
+</form>
+
+<form #carDetailesByLicense="ngForm" (submit)="displayCarDetailesByLicense(carDetailesByLicense,$event)">
+  <h3>Car details by license number</h3>
+
+  <label for="licenseNumberParam">Add License Number</label>
+  <input type="text" name="LicenseNumber" id="licenseNumberParam" ngModel placeholder="Search license">
+  <br>
+  <button type="submit">Add Form</button>
+  {{}}
+
+</form>
